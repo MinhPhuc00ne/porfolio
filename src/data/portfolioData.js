@@ -6,7 +6,7 @@ export const personalInfo = {
   name: "Jos Nguyen",
   title: "Software Engineer & Game Developer",
   status: "Available for new opportunities",
-  bio: "I am a passionate Software Engineer & Game Developer specializing in architecting full-stack web applications and interactive 3D game engines. Dedicated to building clean, scalable backend services, responsive modern interfaces, and high-performance real-time game systems with exceptional user experiences.",
+  bio: "I am a passionate Software Engineer & Game Developer specializing in architecting scalable full-stack web applications and immersive 3D game engines. Skilled in building robust RESTful microservices, responsive React interfaces, and high-performance Unity gameplay systems, combining core software engineering principles with dynamic interactive design.",
   location: "Ho Chi Minh City, Vietnam",
   email: "phucgammer012345@gmail.com",
   github: "https://github.com/MinhPhuc00ne",

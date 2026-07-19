@@ -2,7 +2,7 @@ import React from 'react';
 import { Mail, ArrowRight, Gamepad2, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, FacebookIcon } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
-import skillsGif from '../assets/Skills_Animation_Dark.gif';
+import meImg from '../assets/ME.png';
 
 const Hero = () => {
   return (
@@ -25,51 +25,12 @@ const Hero = () => {
               combining core software engineering with interactive game development. Dedicated to building modern web applications and high-performance game logic.
             </p>
 
-            {/* Character RPG HUD */}
-            <div className="character-hud">
-              <div className="hud-header">
-                <span className="hud-class">CLASS: DEV & GAME ENGINE ARCHITECT</span>
-                <span className="hud-level">LVL 24</span>
-              </div>
-              <div className="hud-stats-list">
-                <div className="hud-stat-item">
-                  <div className="hud-stat-info">
-                    <span className="hud-stat-name">HP (Coding & Full-Stack)</span>
-                    <span className="hud-stat-val">95%</span>
-                  </div>
-                  <div className="hud-bar-bg">
-                    <div className="hud-bar-fill hud-bar-hp" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-
-                <div className="hud-stat-item">
-                  <div className="hud-stat-info">
-                    <span className="hud-stat-name">MP (Game Dev & Unity)</span>
-                    <span className="hud-stat-val">90%</span>
-                  </div>
-                  <div className="hud-bar-bg">
-                    <div className="hud-bar-fill hud-bar-mp" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-
-                <div className="hud-stat-item">
-                  <div className="hud-stat-info">
-                    <span className="hud-stat-name">EXP (Active Learning)</span>
-                    <span className="hud-stat-val">88%</span>
-                  </div>
-                  <div className="hud-bar-bg">
-                    <div className="hud-bar-fill hud-bar-exp" style={{ width: '88%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary">
                 Explore Projects <ArrowRight size={18} />
               </a>
 
-              <a href="#contact" className="btn btn-outline">
+              <a href={`mailto:${personalInfo.email}`} className="btn btn-outline">
                 <Mail size={18} /> Get In Touch
               </a>
             </div>
@@ -115,8 +76,8 @@ const Hero = () => {
           <div className="hero-visual">
             <div className="hero-gif-wrapper">
               <img
-                src={skillsGif}
-                alt="Tech Stack Animation GIF"
+                src={meImg}
+                alt="Jos Nguyen"
                 className="hero-tech-gif"
               />
             </div>

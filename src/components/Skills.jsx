@@ -14,13 +14,13 @@ const Skills = () => {
     <section id="skills" style={{ background: 'rgba(0, 0, 0, 0.15)' }}>
       <div className="container">
         <div className="section-tag">
-          <Cpu size={14} /> Kỹ Năng & Công Nghệ
+          <Cpu size={14} /> Skills & Expertise
         </div>
         <h2 className="section-title">
-          Tech Stack & <span className="gradient-text">Năng Lực Chuyên Môn</span>
+          Tech Stack & <span className="gradient-text">Core Competencies</span>
         </h2>
         <p className="section-subtitle">
-          Các công nghệ, framework và công cụ tôi sử dụng hàng ngày để xây dựng sản phẩm tốt nhất.
+          The technologies, frameworks, and tools I utilize daily to build high-performance applications.
         </p>
 
         <div className="skills-categories">

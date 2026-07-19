@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, GraduationCap } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 import { timeline } from '../data/portfolioData';
 
 const Experience = () => {
@@ -7,13 +7,13 @@ const Experience = () => {
     <section id="experience" style={{ background: 'rgba(0, 0, 0, 0.15)' }}>
       <div className="container">
         <div className="section-tag">
-          <Briefcase size={14} /> Hành Trình
+          <Briefcase size={14} /> Career Journey
         </div>
         <h2 className="section-title">
-          Kinh Nghiệm & <span className="gradient-text">Học Vấn</span>
+          Experience & <span className="gradient-text">Education</span>
         </h2>
         <p className="section-subtitle">
-          Quá trình học tập, phát triển kỹ năng và tích luỹ kinh nghiệm thực tế.
+          My academic roadmap, professional development, and practical software engineering accomplishments.
         </p>
 
         <div className="timeline">

@@ -15,22 +15,22 @@ const Hero = () => {
             </div>
 
             <h1 className="hero-title">
-              Xin chào, Tôi là <br />
+              Hi, I'm <br />
               <span className="gradient-text">{personalInfo.name}</span>
             </h1>
 
             <p className="hero-description">
-              Một <strong style={{ color: 'var(--accent-cyan)' }}>{personalInfo.title}</strong> tràn đầy nhiệt huyết.
-              Chuyên thiết kế và phát triển các hệ thống phần mềm web hiện đại, tối ưu hoá hiệu năng từ ý tưởng đến sản phẩm hoàn chỉnh.
+              A passionate <strong style={{ color: 'var(--accent-cyan)' }}>{personalInfo.title}</strong> based in Vietnam.
+              Dedicated to designing and building modern, scalable web applications with high performance and seamless user experiences.
             </p>
 
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary">
-                Khám phá Dự án <ArrowRight size={18} />
+                Explore Projects <ArrowRight size={18} />
               </a>
 
               <a href="#contact" className="btn btn-outline">
-                <Mail size={18} /> Liên hệ với tôi
+                <Mail size={18} /> Get In Touch
               </a>
             </div>
 

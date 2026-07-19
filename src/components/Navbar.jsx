@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, Code2 } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const Navbar = ({ theme, toggleTheme }) => {
@@ -36,12 +36,12 @@ const Navbar = ({ theme, toggleTheme }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Trang chủ', href: '#hero', id: 'hero' },
-    { name: 'Giới thiệu', href: '#about', id: 'about' },
-    { name: 'Kỹ năng', href: '#skills', id: 'skills' },
-    { name: 'Dự án', href: '#projects', id: 'projects' },
-    { name: 'Kinh nghiệm', href: '#experience', id: 'experience' },
-    { name: 'Liên hệ', href: '#contact', id: 'contact' },
+    { name: 'Home', href: '#hero', id: 'hero' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
@@ -71,14 +71,14 @@ const Navbar = ({ theme, toggleTheme }) => {
           <button
             className="icon-btn"
             onClick={toggleTheme}
-            title={theme === 'dark' ? 'Chuyển sang Chế độ Sáng' : 'Chuyển sang Chế độ Tối'}
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             aria-label="Toggle Theme"
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
           <a href="#contact" className="btn btn-primary">
-            Tuyển dụng
+            Hire Me
           </a>
 
           <button

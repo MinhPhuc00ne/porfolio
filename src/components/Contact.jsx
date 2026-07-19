@@ -24,13 +24,13 @@ const Contact = () => {
     <section id="contact">
       <div className="container">
         <div className="section-tag">
-          <MessageSquare size={14} /> Liên Hệ
+          <MessageSquare size={14} /> Contact
         </div>
         <h2 className="section-title">
-          Hãy Cùng Nhau <span className="gradient-text">Tạo Nên Điều Tuyệt Vời</span>
+          Let's Build Something <span className="gradient-text">Great Together</span>
         </h2>
         <p className="section-subtitle">
-          Bạn có dự án thú vị hoặc cơ hội công việc phù hợp? Đừng ngần ngại nhắn tin cho tôi nhé!
+          Have an exciting project idea or career opportunity? Feel free to reach out to me!
         </p>
 
         <div className="contact-grid">
@@ -40,7 +40,7 @@ const Contact = () => {
                 <Mail size={22} />
               </div>
               <div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Gửi Email Trực Tiếp</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Direct Email</div>
                 <a href={`mailto:${personalInfo.email}`} style={{ color: 'var(--text-primary)', fontWeight: '600', textDecoration: 'none' }}>
                   {personalInfo.email}
                 </a>
@@ -52,7 +52,7 @@ const Contact = () => {
                 <MapPin size={22} />
               </div>
               <div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Vị Trí Hiện Tại</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Current Location</div>
                 <div style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
                   {personalInfo.location}
                 </div>
@@ -60,9 +60,9 @@ const Contact = () => {
             </div>
 
             <div className="glass-card" style={{ background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))', borderColor: 'var(--border-accent)' }}>
-              <h4 style={{ fontWeight: '700', marginBottom: '8px' }}>🚀 Sẵn sàng bắt đầu dự án mới?</h4>
+              <h4 style={{ fontWeight: '700', marginBottom: '8px' }}>🚀 Ready for new projects</h4>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-                Tôi luôn hào hứng tham gia các dự án phát triển phần mềm chất lượng cao, các ý tưởng startup hoặc công việc Full-time / Remote.
+                I am open to full-time engineering roles, freelance opportunities, and collaborative open-source projects.
               </p>
             </div>
           </div>
@@ -71,25 +71,25 @@ const Contact = () => {
             {submitted ? (
               <div className="form-success">
                 <CheckCircle2 size={32} style={{ margin: '0 auto 10px', display: 'block' }} />
-                <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '6px' }}>Cảm ơn bạn đã liên hệ!</h4>
-                <p>Tôi đã nhận được tin nhắn của bạn và sẽ phản hồi sớm nhất có thể.</p>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '6px' }}>Thank You for Reaching Out!</h4>
+                <p>I have received your message and will respond as soon as possible.</p>
                 <button
                   className="btn btn-outline"
                   style={{ marginTop: '16px' }}
                   onClick={() => setSubmitted(false)}
                 >
-                  Gửi tin nhắn khác
+                  Send Another Message
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div className="form-group">
-                    <label className="form-label">Họ & Tên *</label>
+                    <label className="form-label">Full Name *</label>
                     <input
                       type="text"
                       className="form-input"
-                      placeholder="Nguyễn Văn A"
+                      placeholder="John Doe"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -97,11 +97,11 @@ const Contact = () => {
                   </div>
 
                   <div className="form-group">
-                    <label className="form-label">Email Liên Hệ *</label>
+                    <label className="form-label">Email Address *</label>
                     <input
                       type="email"
                       className="form-input"
-                      placeholder="your.email@example.com"
+                      placeholder="john.doe@example.com"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -110,21 +110,21 @@ const Contact = () => {
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Chủ Đề</label>
+                  <label className="form-label">Subject</label>
                   <input
                     type="text"
                     className="form-input"
-                    placeholder="Hợp tác dự án / Tuyển dụng..."
+                    placeholder="Project Collaboration / Job Opportunity..."
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Nội Dung Tin Nhắn *</label>
+                  <label className="form-label">Message *</label>
                   <textarea
                     className="form-textarea"
-                    placeholder="Xin chào Minh Phúc, tôi muốn trao đổi về..."
+                    placeholder="Hi Minh Phuc, I would like to discuss..."
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -132,7 +132,7 @@ const Contact = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Gửi Tin Nhắn <Send size={16} />
+                  Send Message <Send size={16} />
                 </button>
               </form>
             )}

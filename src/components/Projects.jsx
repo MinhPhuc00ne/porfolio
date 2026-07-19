@@ -7,7 +7,7 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
-    { label: 'Tất cả dự án', value: 'all' },
+    { label: 'All Projects', value: 'all' },
     { label: 'Full-Stack', value: 'fullstack' },
     { label: 'Frontend', value: 'frontend' },
     { label: 'Backend', value: 'backend' }
@@ -21,13 +21,13 @@ const Projects = () => {
     <section id="projects">
       <div className="container">
         <div className="section-tag">
-          <Layers size={14} /> Dự Án Nổi Bật
+          <Layers size={14} /> Featured Projects
         </div>
         <h2 className="section-title">
-          Những Sản Phẩm <span className="gradient-text">Tôi Đã Xây Dựng</span>
+          Selected Products <span className="gradient-text">I've Built</span>
         </h2>
         <p className="section-subtitle">
-          Tổng hợp các dự án thực tế tiêu biểu từ các ứng dụng Web Full-Stack đến hệ thống RESTful API.
+          A showcase of key software engineering projects ranging from Full-Stack web apps to RESTful APIs.
         </p>
 
         {/* Filter Tabs */}

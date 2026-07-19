@@ -124,7 +124,7 @@ const Contact = () => {
                   <label className="form-label">Message *</label>
                   <textarea
                     className="form-textarea"
-                    placeholder="Hi Minh Phuc, I would like to discuss..."
+                    placeholder="Hi Jos Nguyen, I would like to discuss..."
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

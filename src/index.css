@@ -1,6 +1,8 @@
 /* Portfolio Global Design System & Styles */
+@import url('https://fonts.cdnfonts.com/css/product-sans');
+
 :root {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'gg sans', 'Google Sans', 'Product Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Color Palette - Dark Mode Default */
@@ -119,9 +121,17 @@ body {
 }
 
 @keyframes floatOrb {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 80px) scale(1.1); }
-  100% { transform: translate(-40px, 120px) scale(0.95); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(60px, 80px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-40px, 120px) scale(0.95);
+  }
 }
 
 /* Typography Utilities */
@@ -391,9 +401,20 @@ section {
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 .hero-title {
@@ -466,9 +487,17 @@ section {
 }
 
 @keyframes morphBlob {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-  50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  100% { border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%; }
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  50% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+  }
 }
 
 .avatar-inner {
@@ -518,23 +547,121 @@ section {
   box-shadow: var(--shadow-glass);
 }
 
-.floating-badge.badge-1 {
-  top: 10%;
-  left: -20px;
+/* Tech Orbit Styling - Outer Orbit */
+.outer-orbit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
 }
 
-.floating-badge.badge-2 {
-  bottom: 10%;
-  right: -20px;
+.outer-orbit-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 380px;
+  height: 380px;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.badge-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.outer-orbit-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 380px;
+  height: 380px;
+  z-index: 2;
+  animation: spinOuterOrbit 40s linear infinite;
+  pointer-events: none;
+}
+
+.outer-orbit-wrap * {
+  pointer-events: auto;
+}
+
+@keyframes spinOuterOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinOuterOrbit-counter {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.outer-orbit-pos-1 {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outer-orbit-pos-2 {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.outer-orbit-pos-3 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outer-orbit-pos-4 {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-badge {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  animation: spinOuterOrbit-counter 40s linear infinite;
+  border-color: rgba(6, 182, 212, 0.2) !important;
+}
+
+.orbit-badge-scaler {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.orbit-badge-scaler:hover {
+  transform: scale(1.08);
+}
+
+.orbit-badge-scaler:hover .orbit-badge {
+  border-color: var(--accent-cyan) !important;
+  box-shadow: var(--shadow-glow);
 }
 
 /* Stats Counter Grid */
@@ -901,15 +1028,19 @@ footer {
     text-align: center;
     gap: 40px;
   }
+
   .hero-content {
     align-items: center;
   }
+
   .hero-title {
     font-size: 2.8rem;
   }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -919,28 +1050,355 @@ footer {
   .nav-links {
     display: none;
   }
+
   .mobile-toggle {
     display: flex;
   }
+
   .section-title {
     font-size: 2rem;
   }
+
   .hero-title {
     font-size: 2.2rem;
   }
+
   .avatar-wrapper {
     width: 240px;
     height: 240px;
   }
+
   .floating-badge {
     display: none;
   }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
   .footer-container {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+}
+
+/* ==========================================================================
+   Game Developer Theme & RPG HUD Styles
+   ========================================================================== */
+
+/* Logo hover brackets */
+.logo {
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.logo::before,
+.logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  border-top: 1.5px solid transparent;
+  border-bottom: 1.5px solid transparent;
+  transition: all var(--transition-fast);
+  opacity: 0;
+}
+
+.logo::before {
+  left: -10px;
+  border-left: 1.5px solid var(--accent-cyan);
+}
+
+.logo::after {
+  right: -10px;
+  border-right: 1.5px solid var(--accent-cyan);
+}
+
+.logo:hover::before,
+.logo:hover::after {
+  opacity: 1;
+  transform: scaleY(1.1);
+}
+
+/* Character Profile HUD */
+.character-hud {
+  margin: 24px 0;
+  padding: 16px;
+  background: rgba(10, 15, 26, 0.75);
+  border: 1px solid rgba(6, 182, 212, 0.18);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.05), var(--shadow-sm);
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.character-hud::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.character-hud::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+}
+
+.hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+.hud-class {
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hud-level {
+  font-size: 0.75rem;
+  color: var(--accent-violet);
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+
+.hud-stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hud-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hud-stat-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.hud-stat-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+}
+
+.hud-stat-val {
+  font-family: var(--font-mono);
+}
+
+.hud-bar-bg {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.hud-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillStatBar 1.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fillStatBar {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hud-bar-hp {
+  background: linear-gradient(90deg, #ef4444, #f43f5e);
+  box-shadow: 0 0 6px rgba(244, 63, 94, 0.4);
+}
+
+.hud-bar-mp {
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  box-shadow: 0 0 6px rgba(6, 182, 212, 0.4);
+}
+
+.hud-bar-exp {
+  background: linear-gradient(90deg, #10b981, #059669);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+/* Hologram scans & retro console elements */
+.avatar-placeholder {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.12), transparent 75%) !important;
+  overflow: hidden;
+}
+
+.avatar-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.15) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hologram-ring {
+  position: absolute;
+  border: 1.5px solid rgba(6, 182, 212, 0.12);
+  border-radius: 50%;
+  animation: pulseHologram 4s linear infinite;
+  pointer-events: none;
+}
+
+.hologram-ring-1 {
+  width: 140px;
+  height: 140px;
+  animation-duration: 4s;
+}
+
+.hologram-ring-2 {
+  width: 210px;
+  height: 210px;
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+@keyframes pulseHologram {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+.hologram-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.22);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  z-index: 3;
+}
+
+.icon-gamepad {
+  position: absolute;
+  color: var(--accent-cyan);
+  animation: floatGamepad 4s ease-in-out infinite alternate;
+}
+
+.icon-terminal {
+  position: absolute;
+  color: var(--accent-violet);
+  animation: floatTerminal 4s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatGamepad {
+  0% {
+    transform: translate(-8px, -6px) scale(0.95);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: translate(6px, 6px) scale(1.05);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px var(--accent-cyan));
+  }
+}
+
+@keyframes floatTerminal {
+  0% {
+    transform: translate(8px, 6px) scale(1.05);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px var(--accent-violet));
+  }
+
+  100% {
+    transform: translate(-6px, -6px) scale(0.95);
+    opacity: 0.65;
+  }
+}
+
+/* Orbit Card Badge Overrides */
+.orbit-badge {
+  border: 1px solid rgba(6, 182, 212, 0.16) !important;
+  background: rgba(10, 15, 26, 0.8) !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.orbit-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-top: 1.5px solid var(--accent-cyan);
+  border-left: 1.5px solid var(--accent-cyan);
+}
+
+.orbit-badge::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-bottom: 1.5px solid var(--accent-cyan);
+  border-right: 1.5px solid var(--accent-cyan);
+}
+
+/* Responsive scale for orbit on mobile */
+@media (max-width: 768px) {
+  .outer-orbit-container {
+    transform: translate(-50%, -50%) scale(0.68);
+  }
+
+  .character-hud {
+    margin: 20px auto;
   }
 }

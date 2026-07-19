@@ -1,7 +1,7 @@
 // Portfolio Data Configuration for Minh Phuc (English)
 
 export const personalInfo = {
-  name: "Minh Phuc",
+  name: "Jos Nguyen",
   title: "Software Engineer & Full-Stack Developer",
   status: "Available for new opportunities",
   bio: "I am a passionate Software Engineer focused on building high-performance, responsive web applications with exceptional user experiences. I thrive on solving complex technical challenges across the full stack, from modern React/Vite frontends to scalable Java Spring Boot and Node.js backends.",

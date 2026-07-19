@@ -48,8 +48,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <a href="#hero" className="logo">
-          <div className="logo-badge">MP</div>
-          <span>MinhPhuc<span className="gradient-text">.dev</span></span>
+          <span>Jos <span className="gradient-text">Nguyen</span></span>
         </a>
 
         <nav>

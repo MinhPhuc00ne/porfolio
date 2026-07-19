@@ -22,7 +22,7 @@ const Hero = () => {
 
             <p className="hero-description">
               A passionate <strong style={{ color: 'var(--accent-cyan)' }}>{personalInfo.title}</strong> based in Vietnam,
-              combining core software engineering with interactive game development. Dedicated to building modern web applications and high-performance game logic.
+              specializing in architecting full-stack web applications and interactive 3D game engines. Dedicated to building clean, scalable backend services, responsive modern interfaces, and high-performance real-time game systems with exceptional user experiences.
             </p>
 
             <div className="hero-actions">

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Mail, ArrowRight, Terminal, Code2, Sparkles, Atom, Leaf, Gamepad2, Infinity as InfinityIcon, Container, Database, Server } from 'lucide-react';
+import { Mail, ArrowRight, Gamepad2, Terminal } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, FacebookIcon } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
+import skillsGif from '../assets/Skills_Animation_Dark.gif';
 
 const Hero = () => {
   return (
@@ -112,83 +113,12 @@ const Hero = () => {
           </div>
 
           <div className="hero-visual">
-            <div className="avatar-wrapper">
-              <div className="avatar-inner">
-                <div className="avatar-placeholder">
-                  <div className="hologram-ring hologram-ring-1"></div>
-                  <div className="hologram-ring hologram-ring-2"></div>
-                  <div className="hologram-icons">
-                    <Gamepad2 className="icon-gamepad" size={32} />
-                    <Terminal className="icon-terminal" size={28} />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Orbiting Badges around the outside */}
-            <div className="outer-orbit-container">
-              <div className="outer-orbit-ring"></div>
-              <div className="outer-orbit-wrap">
-                {/* Badge 1 - Tech Focus */}
-                <div className="outer-orbit-pos-1">
-                  <div className="orbit-badge-scaler">
-                    <div className="floating-badge orbit-badge">
-                      <div className="badge-icon" style={{ background: 'rgba(6, 182, 212, 0.2)', color: 'var(--accent-cyan)' }}>
-                        <Code2 size={20} />
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>[System Core]</div>
-                        <div style={{ fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>React & Spring Boot</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Badge 2 - Code Style */}
-                <div className="outer-orbit-pos-2">
-                  <div className="orbit-badge-scaler">
-                    <div className="floating-badge orbit-badge">
-                      <div className="badge-icon" style={{ background: 'rgba(139, 92, 246, 0.2)', color: 'var(--accent-violet)' }}>
-                        <Sparkles size={20} />
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>[Quality Control]</div>
-                        <div style={{ fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>Clean & Scalable Code</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Badge 3 - Game Engine */}
-                <div className="outer-orbit-pos-3">
-                  <div className="orbit-badge-scaler">
-                    <div className="floating-badge orbit-badge">
-                      <div className="badge-icon" style={{ background: 'rgba(16, 185, 129, 0.2)', color: 'var(--accent-emerald)' }}>
-                        <Gamepad2 size={20} />
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>[Game Core]</div>
-                        <div style={{ fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>Unity & Game Dev</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Badge 4 - DevOps */}
-                <div className="outer-orbit-pos-4">
-                  <div className="orbit-badge-scaler">
-                    <div className="floating-badge orbit-badge">
-                      <div className="badge-icon" style={{ background: 'rgba(236, 72, 153, 0.2)', color: 'var(--accent-rose)' }}>
-                        <InfinityIcon size={20} />
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>[Deployment Node]</div>
-                        <div style={{ fontWeight: '700', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>Docker & DevOps</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="hero-gif-wrapper">
+              <img
+                src={skillsGif}
+                alt="Tech Stack Animation GIF"
+                className="hero-tech-gif"
+              />
             </div>
           </div>
         </div>

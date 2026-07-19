@@ -29,7 +29,7 @@ function App() {
       </div>
 
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      
+
       <main>
         <Hero />
         <About />

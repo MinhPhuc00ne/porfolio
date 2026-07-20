@@ -39,9 +39,8 @@ const Navbar = ({ theme, toggleTheme, onGoHome, isDetailPage }) => {
 
   const navLinks = [
     { name: 'Home', href: '#hero', id: 'hero' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Work', href: '#projects', id: 'projects' },
+    { name: 'About', href: '#about', id: 'about' },
   ];
 
   const handleNavClick = (e, targetId) => {
@@ -70,7 +69,7 @@ const Navbar = ({ theme, toggleTheme, onGoHome, isDetailPage }) => {
             }
           }}
         >
-          <span>Jos <span className="gradient-text">Nguyen</span></span>
+          <span className="brand-logo-text">JOS <span className="gradient-text">NGUYEN</span></span>
         </a>
 
         {/* Right: Nav Links + Theme Toggle */}

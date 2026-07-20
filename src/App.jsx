@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import IntroCard from './components/IntroCard';
+import Projects from './components/Projects';
 import About from './components/About';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Footer from './components/Footer';
 import ProjectDetail from './components/ProjectDetail';
+import BackToTop from './components/BackToTop';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -45,6 +47,9 @@ function App() {
         isDetailPage={Boolean(selectedProject)}
       />
 
+      {/* Corner Back-to-Top Button */}
+      <BackToTop />
+
       <main>
         {selectedProject ? (
           <ProjectDetail
@@ -54,9 +59,10 @@ function App() {
         ) : (
           <>
             <Hero />
+            <IntroCard />
+            <Projects onSelectProject={handleSelectProject} />
             <About />
             <Skills />
-            <Projects onSelectProject={handleSelectProject} />
           </>
         )}
       </main>
